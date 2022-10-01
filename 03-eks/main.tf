@@ -38,10 +38,8 @@ module "eks" {
   vpc_id                               = data.terraform_remote_state.vpc.outputs.vpc_id
   subnet_ids                           = data.terraform_remote_state.vpc.outputs.public_subnets
 #  worker_additional_security_group_ids = [data.aws_security_group.default.id]
-  node_groups = [
-    {
+  node_groups = {
       instance_type = "m4.large"
       asg_max_size  = 5
     }
-  ]
 }
