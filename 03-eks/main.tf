@@ -38,15 +38,7 @@ module "eks" {
   vpc_id                               = data.terraform_remote_state.vpc.outputs.vpc_id
   subnet_ids                           = data.terraform_remote_state.vpc.outputs.public_subnets
 #  worker_additional_security_group_ids = [data.aws_security_group.default.id]
-  node_groups = {
-   example = {
-     desired_capacity = 1
-     max_capacity     = 5
-     min_capacity     = 1
-     instance_type = "m4.large"
-   }
-  }
-  
+
   
   #worker_groups_launch_template = [
    # {
