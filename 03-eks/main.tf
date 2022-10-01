@@ -36,12 +36,12 @@ module "eks" {
   cluster_version                      = "1.21"
   cluster_name                         = "devopsdaytlv2021"
   vpc_id                               = data.terraform_remote_state.vpc.outputs.vpc_id
-  subnets                              = data.terraform_remote_state.vpc.outputs.public_subnets
-  worker_additional_security_group_ids = [data.aws_security_group.default.id]
-  worker_groups = [
-    {
-      instance_type = "m4.large"
-      asg_max_size  = 5
-    }
-  ]
+#  subnets                              = data.terraform_remote_state.vpc.outputs.public_subnets
+#  worker_additional_security_group_ids = [data.aws_security_group.default.id]
+#  worker_groups = [
+#    {
+#      instance_type = "m4.large"
+#      asg_max_size  = 5
+ #   }
+ # ]
 }
