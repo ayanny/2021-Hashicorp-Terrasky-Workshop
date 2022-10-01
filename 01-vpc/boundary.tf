@@ -3,10 +3,10 @@ resource "tls_private_key" "dodworkshop" {
   rsa_bits  = 4096
 }
 
-resource "aws_key_pair" "generated_key" {
-  key_name   = "dodworkshop"
-  public_key = tls_private_key.dodworkshop.public_key_openssh
-}
+#resource "aws_key_pair" "generated_key" {
+ # key_name   = "dodworkshop"
+  #public_key = tls_private_key.dodworkshop.public_key_openssh
+#}
 
 resource "aws_security_group_rule" "allow_inbound_ssh" {
   type        = "ingress"
